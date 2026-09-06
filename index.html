@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio d'Alassane Thiam, ingénieur mécatronique spécialisé en LabVIEW, supervision industrielle, instrumentation et vision par ordinateur.">
+  <title>Alassane Thiam — Ingénieur mécatronique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#accueil">AT<span>.</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a>
+    </nav>
+    <a class="contact" href="https://www.linkedin.com/in/alassane-thiam-b8282322a/">LinkedIn ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="eyebrow">Ingénieur mécatronique · Strasbourg</p>
+        <h1>Des systèmes industriels <em>lisibles, testables et connectés.</em></h1>
+        <p class="lead">Je conçois des applications de supervision, des architectures LabVIEW modulaires et des systèmes mêlant instrumentation, automatisme et vision.</p>
+        <div class="actions"><a class="primary" href="#projets">Voir mes projets</a><a class="secondary" href="mailto:alassane.thiam@insa-strasbourg.fr">Me contacter</a></div>
+      </div>
+      <div class="hero-visual"><img src="linkedin-banner.png" alt="Instrumentation, supervision et vision industrielle"><div class="signal">23 modules DQMH <span>•</span> 250+ signaux <span>•</span> OPC UA</div></div>
+    </section>
+
+    <section class="projects" id="projets">
+      <div class="section-title"><p>Réalisations</p><h2>Projets sélectionnés</h2></div>
+      <article class="project featured">
+        <div class="project-image"><img src="supervision.jpg" alt="Supervision d'une centrale biochar développée sous LabVIEW"></div>
+        <div class="project-copy"><span class="tag">Projet de fin d’études · 2026</span><h3>Supervision modulaire d’une centrale biochar</h3><p>Conception d’une application LabVIEW fondée sur DQMH : lancement ordonné, navigation par subpanels, échanges par requêtes et broadcasts, centralisation des variables, simulation cyclique, alarmes et journal.</p><ul><li>23 modules suivis</li><li>Environ 71 sorties simulées</li><li>25 alarmes configurées</li><li>Lecture OPC UA validée</li></ul><p class="privacy">Projet industriel — démonstration et architecture présentées sans publier le code confidentiel.</p></div>
+      </article>
+
+      <div class="project-grid">
+        <article class="card"><div class="card-img"><img src="variable-manager.jpg" alt="Gestionnaire de variables LabVIEW"></div><span class="tag">LabVIEW · myRIO · MATLAB</span><h3>Outil de coupe intelligent</h3><p>Acquisition thermocouple et jauge de déformation, jumeau numérique, commande PID et exploitation des mesures pour préparer un modèle prédictif.</p><small>Stage FabLab INSA Strasbourg · 2025</small></article>
+        <article class="card"><div class="card-img"><img src="vision.png" alt="Détection de visage par Viola-Jones"></div><span class="tag">MATLAB · Traitement du signal</span><h3>Détection et reconnaissance de visages</h3><p>Prétraitement d’images, corrélation, filtrage, détection de pics et comparaison de méthodes Viola–Jones et YOLOv3 Tiny.</p><small>Projet académique</small></article>
+        <article class="card agv"><div class="agv-art" aria-hidden="true"><span>CAM</span><b>→</b><span>Rπ</span><b>→</b><span>M</span></div><span class="tag">Raspberry Pi · Python · OpenCV</span><h3>AGV guidé par vision</h3><p>Détection de couleurs par caméra Pi et pilotage des moteurs d’un véhicule autonome à partir des informations visuelles.</p><small>Projet mécatronique · 2024–2025</small></article>
+      </div>
+    </section>
+
+    <section class="skills" id="competences">
+      <div class="section-title"><p>Expertise</p><h2>De la mesure à l’interface opérateur</h2></div>
+      <div class="skills-grid">
+        <div><span>01</span><h3>Supervision</h3><p>LabVIEW, DQMH, EHL/MHL, subpanels, alarmes, journalisation.</p></div>
+        <div><span>02</span><h3>Instrumentation</h3><p>Capteurs, acquisition, conditionnement, essais, myRIO, PID.</p></div>
+        <div><span>03</span><h3>Connectivité</h3><p>OPC UA, gestion centralisée de variables, interfaces entrées/sorties.</p></div>
+        <div><span>04</span><h3>Vision & calcul</h3><p>Python, OpenCV, MATLAB, traitement du signal et prototypage.</p></div>
+      </div>
+    </section>
+
+    <section class="timeline" id="parcours">
+      <div class="section-title"><p>Parcours</p><h2>Expériences principales</h2></div>
+      <div class="timeline-list">
+        <div><time>2026</time><h3>Projet de fin d’études — Mini Green Power</h3><p>Supervision industrielle d’une centrale biochar.</p></div>
+        <div><time>2025</time><h3>Stage R&D — FabLab INSA Strasbourg</h3><p>Instrumentation et prototypage d’un outil de coupe intelligent.</p></div>
+        <div><time>2023</time><h3>Stage industriel — Punch Powertrain</h3><p>Assemblage, vissage électronique et essais de groupes motopropulseurs.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div><strong>Alassane Thiam</strong><p>Ingénieur mécatronique — disponible pour des opportunités en supervision, essais et automatisme.</p></div><a href="mailto:alassane.thiam@insa-strasbourg.fr">alassane.thiam@insa-strasbourg.fr</a></footer>
+</body>
+</html>
