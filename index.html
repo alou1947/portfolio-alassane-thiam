@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Alassane Thiam — Ingénieur mécatronique</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="details.css?v=20260912-fix2">
+  <link rel="stylesheet" href="details.css?v=20260912-outil">
 </head>
 <body>
   <header class="nav">
@@ -47,6 +47,21 @@
         <article class="card"><div class="card-img"><img src="vision.png" alt="Détection de visage par Viola-Jones"></div><span class="tag">MATLAB · Traitement du signal</span><h3>Détection et reconnaissance de visages</h3><p>Prétraitement d’images, corrélation, filtrage, détection de pics et comparaison de méthodes Viola–Jones et YOLOv3 Tiny.</p><details><summary>Méthode et extrait</summary><div class="detail-content"><p>Normalisation des images, extraction des zones utiles, comparaison par corrélation puis évaluation face aux détecteurs Viola–Jones et YOLOv3 Tiny.</p><pre><code>I = im2gray(I);<br>I = imresize(I, tailleReference);<br>score = max(normxcorr2(modele, I), [], "all");<br>reconnu = score &gt; seuil;</code></pre></div></details><small>Projet académique</small></article>
         <article class="card agv"><div class="card-img"><img src="agv-cao-prototype.png" alt="CAO et prototype réel du robot AGV"></div><span class="tag">Raspberry Pi · Python · Vision embarquée</span><h3>AGV guidé par vision</h3><p>Détection d’une cible bleue en espace HSV, estimation de son angle et de sa distance, puis génération des commandes moteur. Intégration du pilotage par marqueur ArUco, de l’accès distant SSH et d’une carte électronique conçue et routée sous Proteus.</p><details><summary>Pilotage et extrait</summary><div class="detail-content"><p>La Pi Camera fournit l’image. Le traitement HSV localise la cible ; son décalage horizontal produit la consigne différentielle des moteurs.</p><pre><code>hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)<br>mask = cv2.inRange(hsv, bleu_min, bleu_max)<br>erreur = centre_cible - largeur / 2<br>moteur_g = vitesse - Kp * erreur<br>moteur_d = vitesse + Kp * erreur</code></pre></div></details><small>Projet de semestre S8 · contribution : vision et pilotage moteur</small></article>
       </div>
+    </section>
+
+    <section class="tool-focus" id="outil-coupe">
+      <div class="section-title"><p>FOCUS TECHNIQUE</p><h2>Outil de coupe intelligent : de la mesure à la recommandation</h2></div>
+      <p class="focus-lead">L'objectif ne consistait pas seulement à afficher deux capteurs. J'ai étudié et prototypé une chaîne capable d'observer le procédé d'usinage, de prédire son comportement et de proposer des paramètres de coupe adaptés.</p>
+      <div class="tool-pipeline"><span>Thermocouple K<br><small>température</small></span><i>+</i><span>Jauge de contrainte<br><small>déformation / effort</small></span><i>→</i><span>Conditionnement<br><small>AD8495 + INA125</small></span><i>→</i><span>NI myRIO<br><small>acquisition temps réel</small></span><i>→</i><span>LabVIEW / MATLAB<br><small>modèle + commande</small></span></div>
+      <div class="tool-grid">
+        <article><h3>Étude et choix techniques</h3><p>Comparaison des capteurs thermiques, jauges, cellules de charge et solutions piézoélectriques. Comparaison myRIO et Arduino + Raspberry Pi selon le coût, le temps réel, le câblage et l'intégration industrielle.</p></article>
+        <article><h3>Acquisition et conditionnement</h3><p>Étude des signaux faibles, amplification de la jauge avec INA125 et compensation du thermocouple K avec AD8495. Centralisation des voies analogiques dans une interface LabVIEW.</p></article>
+        <article><h3>Modèle prédictif</h3><p>Normalisation des données et estimation de la température et de la déformation par régression linéaire. Un réseau de neurones a également été étudié pour comparer les approches.</p></article>
+        <article><h3>Jumeau numérique</h3><p>Les mesures récentes sont conservées dans des buffers. Le modèle produit une prédiction et garde ses états d'un cycle au suivant pour représenter l'évolution réelle du procédé.</p></article>
+        <article><h3>Commande adaptative</h3><p>Un PID combine l'écart mesuré et l'écart prédit. L'intégrale est limitée par anti-windup et les paramètres Vc, ap et f restent bornés par les limites physiques d'usinage.</p></article>
+        <article><h3>Descente de gradient</h3><p>Lorsque l'erreur dépasse le seuil, les coefficients du modèle sont corrigés en ligne. L'apprentissage utilise l'écart mesure-prédiction et peut être conditionné par une validation utilisateur.</p></article>
+      </div>
+      <div class="tool-result"><strong>Résultat :</strong> une architecture complète « capteurs → acquisition → prédiction → correction → recommandation », conçue pour adapter la vitesse de coupe, la profondeur de passe et l'avance tout en protégeant la qualité d'usinage.</div>
     </section>
 
     <section class="skills" id="competences">
