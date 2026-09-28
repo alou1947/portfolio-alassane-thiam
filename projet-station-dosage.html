@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projet personnel d'automatisme : station de dosage et convoyage sous TIA Portal, WinCC et S7-PLCSIM.">
+  <title>Station de dosage et convoyage — Alassane Thiam</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="details.css">
+
+  <style>
+    .station-hero-image,
+    .station-gallery img,
+    .station-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #02070c;
+    }
+
+    .station-gallery,
+    .station-videos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .station-gallery figure,
+    .station-videos figure {
+      margin: 0;
+    }
+
+    .station-gallery figcaption,
+    .station-videos figcaption {
+      padding: 10px 0;
+      color: var(--muted);
+    }
+
+    .station-video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .station-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .station-steps li {
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--green);
+      background: #081522;
+    }
+
+    .station-note {
+      color: var(--muted);
+      border-left: 3px solid var(--blue);
+      padding-left: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .station-gallery,
+      .station-videos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="case-study">
+  <header class="nav">
+    <a class="brand" href="index.html">AT<span>.</span></a>
+
+    <nav aria-label="Navigation du projet">
+      <a href="#procede">Procédé</a>
+      <a href="#programme">Programme</a>
+      <a href="#captures">Captures</a>
+      <a href="#videos">Vidéos</a>
+    </nav>
+
+    <a class="contact" href="index.html#projets">← Portfolio</a>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div>
+        <p class="eyebrow">Projet personnel · Automatisme · 2026</p>
+        <h1>Station de dosage et convoyage</h1>
+
+        <p class="lead">
+          Développement d’une station de préparation de matière par lots :
+          programmation d’un automate Siemens S7-1200 sous TIA Portal,
+          conception de la supervision WinCC et simulation sous S7-PLCSIM.
+        </p>
+
+        <div class="case-metrics">
+          <span><strong>S7-1200</strong>Automate</span>
+          <span><strong>WinCC</strong>Supervision</span>
+          <span><strong>PLCSIM</strong>Simulation</span>
+        </div>
+      </div>
+
+      <img
+        class="station-hero-image"
+        src="station-dosage/wincc-process.png"
+        alt="Vue WinCC de la station avec silo, convoyeurs, mélangeur, commandes et mesures">
+    </section>
+
+    <section class="case-section" id="procede">
+      <div class="section-title">
+        <p>01 — Procédé</p>
+        <h2>Du silo au lot évacué</h2>
+      </div>
+
+      <p class="intro">
+        La matière quitte le silo et rejoint une trémie de pesage par le
+        convoyeur d’alimentation. Après le dosage, elle passe par le mélange,
+        la vidange et l’évacuation. L’opérateur suit l’avancement du cycle
+        depuis l’écran WinCC.
+      </p>
+
+      <ol class="station-steps">
+        <li>Silo</li>
+        <li>Alimentation</li>
+        <li>Pesage</li>
+        <li>Mélange</li>
+        <li>Vidange</li>
+        <li>Évacuation</li>
+      </ol>
+
+      <div class="two-col">
+        <article>
+          <h3>Commandes opérateur</h3>
+          <p>
+            La vue principale comporte START, STOP, AUTO et RESET,
+            ainsi qu’un accès aux alarmes et aux paramètres.
+          </p>
+        </article>
+
+        <article>
+          <h3>Suivi du cycle</h3>
+          <p>
+            L’IHM affiche l’état de la séquence, le poids de la trémie,
+            le niveau du silo et le nombre de lots réalisés.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section" id="programme">
+      <div class="section-title">
+        <p>02 — Programme automate</p>
+        <h2>Une logique organisée par fonction</h2>
+      </div>
+
+      <p class="intro">
+        Dans Main [OB1], les blocs sont appelés dans cet ordre :
+        FC_Securites [FC1], FB_Sequence [FB1] avec son DB d’instance
+        DB_Sequence [DB5], puis FC_Commandes [FC2].
+      </p>
+
+      <div class="step-grid">
+        <article>
+          <b>1</b>
+          <h3>Sécurités</h3>
+          <p>
+            FC_Securites regroupe la logique de sécurité avant l’exécution
+            de la séquence et des commandes.
+          </p>
+        </article>
+
+        <article>
+          <b>2</b>
+          <h3>Séquence</h3>
+          <p>
+            FB_Sequence organise le cycle automatique. Le réseau présenté
+            fait passer Etat_Sequence de 0 à 10 lorsque le mode automatique,
+            l’autorisation de marche et le front de démarrage sont présents.
+          </p>
+        </article>
+
+        <article>
+          <b>3</b>
+          <h3>Commandes</h3>
+          <p>
+            FC_Commandes est appelé après le bloc de séquence pour gérer
+            les commandes des équipements.
+          </p>
+        </article>
+      </div>
+
+      <div class="two-col">
+        <article>
+          <h3>Cycle actif</h3>
+          <p>
+            Dans le réseau visible de FB_Sequence, Cycle_Actif est activé
+            lorsque Etat_Sequence est compris entre 10 et 50.
+          </p>
+        </article>
+
+        <article>
+          <h3>Paramètres du procédé</h3>
+          <p>
+            DB_Parametres [DB1] présente notamment une consigne de poids
+            de 25,0, cinq lots demandés, huit secondes de mélange,
+            trente secondes maximales pour le remplissage et vingt
+            secondes maximales pour la vidange.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section" id="captures">
+      <div class="section-title">
+        <p>03 — Captures</p>
+        <h2>Les écrans du projet</h2>
+      </div>
+
+      <p class="intro">
+        Ces captures montrent la supervision, la table de simulation
+        et l’organisation du programme. Cliquez sur une image pour
+        l’ouvrir en grand.
+      </p>
+
+      <div class="station-gallery">
+        <figure>
+          <a href="station-dosage/wincc-process.png">
+            <img src="station-dosage/wincc-process.png"
+                 loading="lazy"
+                 alt="Écran principal WinCC du procédé">
+          </a>
+          <figcaption>WinCC — vue principale du procédé.</figcaption>
+        </figure>
+
+        <figure>
+          <a href="station-dosage/plcsim-table.png">
+            <img src="station-dosage/plcsim-table.png"
+                 loading="lazy"
+                 alt="Table de simulation S7-PLCSIM">
+          </a>
+          <figcaption>PLCSIM — variables et états surveillés.</figcaption>
+        </figure>
+
+        <figure>
+          <a href="station-dosage/main-ob1.png">
+            <img src="station-dosage/main-ob1.png"
+                 loading="lazy"
+                 alt="Main OB1 avec les appels des blocs">
+          </a>
+          <figcaption>Main [OB1] — ordre d’appel des blocs.</figcaption>
+        </figure>
+
+        <figure>
+          <a href="station-dosage/fb-sequence.png">
+            <img src="station-dosage/fb-sequence.png"
+                 loading="lazy"
+                 alt="FB Sequence et logique de démarrage automatique">
+          </a>
+          <figcaption>FB_Sequence [FB1] — démarrage et cycle actif.</figcaption>
+        </figure>
+
+        <figure>
+          <a href="station-dosage/db-parametres.png">
+            <img src="station-dosage/db-parametres.png"
+                 loading="lazy"
+                 alt="DB Parametres avec consignes et temporisations">
+          </a>
+          <figcaption>DB_Parametres [DB1] — consignes et temps.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section" id="videos">
+      <div class="section-title">
+        <p>04 — Démonstrations vidéo</p>
+        <h2>WinCC, TIA Portal et PLCSIM en fonctionnement</h2>
+      </div>
+
+      <p class="intro">
+        Les vidéos présentent les trois aspects complémentaires du projet :
+        l’interface opérateur, le programme automate et la simulation.
+      </p>
+
+      <div class="station-videos">
+        <figure>
+          <video class="station-video"
+                 controls playsinline preload="none"
+                 poster="station-dosage/wincc-process.png"
+                 aria-label="Démonstration WinCC">
+            <source src="station-dosage/demo-wincc.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge cette vidéo.
+          </video>
+          <figcaption>WinCC — supervision du procédé.</figcaption>
+        </figure>
+
+        <figure>
+          <video class="station-video"
+                 controls playsinline preload="none"
+                 poster="station-dosage/main-ob1.png"
+                 aria-label="Présentation TIA Portal">
+            <source src="station-dosage/demo-tia-portal.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge cette vidéo.
+          </video>
+          <figcaption>TIA Portal — programme de la station.</figcaption>
+        </figure>
+
+        <figure>
+          <video class="station-video"
+                 controls playsinline preload="none"
+                 poster="station-dosage/plcsim-table.png"
+                 aria-label="Démonstration S7-PLCSIM">
+            <source src="station-dosage/demo-plcsim.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge cette vidéo.
+          </video>
+          <figcaption>S7-PLCSIM — simulation de l’automate.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section conclusion">
+      <p class="eyebrow">Bilan</p>
+      <h2>Du programme à l’écran opérateur</h2>
+
+      <p>
+        Ce projet personnel relie la programmation d’une séquence par états,
+        la structuration des données du procédé et la supervision WinCC.
+        Il démontre le fonctionnement de la station dans un environnement
+        de simulation logicielle.
+      </p>
+
+      <p class="station-note">
+        Les médias présentés documentent une simulation. Une mise en service
+        sur installation physique n’est pas documentée ici.
+      </p>
+
+      <div class="actions">
+        <a class="primary" href="index.html#projets">Retour aux projets</a>
+        <a class="secondary"
+           href="https://www.linkedin.com/in/alassane-thiam-b8282322a/">
+          LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Alassane Thiam</strong>
+      <p>Ingénieur mécatronique — supervision et automatisme.</p>
+    </div>
+  </footer>
+</body>
+</html>
