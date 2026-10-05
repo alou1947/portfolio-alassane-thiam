@@ -11,39 +11,39 @@
   <meta property="og:image" content="https://alou1947.github.io/portfolio-alassane-thiam/linkedin-banner.png">
   <meta name="twitter:card" content="summary_large_image">
   <title>Alassane Thiam — Ingénieur mécatronique</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="details.css?v=20260912-outil">
+  <link rel="stylesheet" href="style.css?v=20261005">
+  <link rel="stylesheet" href="details.css?v=20261005">
 </head>
-<body>
+<body class="portfolio">
   <header class="nav">
-    <a class="brand" href="#accueil">AT<span>.</span></a>
+    <a class="brand" href="#accueil">AT<span>.</span><span class="brand-name">Alassane Thiam</span></a>
     <nav aria-label="Navigation principale">
       <a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a>
     </nav>
     <a class="contact" href="https://www.linkedin.com/in/alassane-thiam-b8282322a/">LinkedIn ↗</a>
   </header>
 
-  <main>
+  <a class="skip-link" href="#projets">Aller aux projets</a><main>
     <section class="hero" id="accueil">
       <div class="hero-copy">
         <p class="eyebrow">Ingénieur mécatronique · Strasbourg</p>
-        <h1>Des systèmes industriels <em>lisibles, testables et connectés.</em></h1>
+        <h1>De la mesure<br>au <em>système intelligent.</em></h1>
         <p class="lead">Je conçois des applications de supervision, des architectures LabVIEW modulaires et des systèmes mêlant instrumentation, automatisme et vision.</p>
         <div class="actions"><a class="primary" href="#projets">Voir mes projets</a><a class="secondary" href="CV_Alassane_Thiam_Mecatronique.pdf" download>Télécharger mon CV</a><a class="secondary" href="mailto:alassane.thiam@insa-strasbourg.fr">Me contacter</a></div>
       </div>
-      <div class="hero-visual"><img src="linkedin-banner.png" alt="Instrumentation, supervision et vision industrielle"><div class="signal">23 modules DQMH <span>•</span> 250+ signaux <span>•</span> OPC UA</div></div>
+      <div class="hero-visual"><span class="visual-caption">MÉCATRONIQUE / PORTFOLIO 2026</span><img src="linkedin-banner.png" alt="Instrumentation, supervision et vision industrielle"><div class="signal">23 modules DQMH <span>•</span> 250+ signaux <span>•</span> OPC UA</div></div>
     </section>
 
     <section class="projects" id="projets">
-      <div class="section-title"><p>Réalisations</p><h2>Projets sélectionnés</h2></div>
-      <article class="project featured">
-        <a class="primary project-link" href="projet-biochar.html">Découvrir l'étude de cas complète</a>
-        <div class="project-image"><video controls preload="metadata" poster="supervision.jpg" playsinline aria-label="Démonstration de la supervision d'une centrale biochar sous LabVIEW" style="display:block;width:100%;height:100%;min-height:520px;object-fit:cover;background:#02070c"><source src="Supervision_Biochar_LinkedIn_FINAL.mp4" type="video/mp4">Votre navigateur ne permet pas de lire cette vidéo.</video></div>
-        <div class="project-copy"><span class="tag">Projet de fin d’études · 2026</span><h3>Supervision modulaire d’une centrale biochar</h3><p>Conception d’une application LabVIEW fondée sur DQMH : lancement ordonné, navigation par subpanels, échanges par requêtes et broadcasts, centralisation des variables, simulation cyclique, alarmes et journal.</p><ul><li>23 modules suivis</li><li>Environ 71 sorties simulées</li><li>25 alarmes configurées</li><li>Lecture OPC UA validée</li></ul><details><summary>Voir la fiche technique</summary><div class="detail-content"><h4>Ma contribution</h4><p>Conception manuelle des contrôles industriels, création des modules DQMH, des requêtes et broadcasts, intégration dans les subpanels et développement du Variable Manager, de la simulation et des alarmes.</p><h4>Chaîne fonctionnelle</h4><pre><code>Modules procédé → Variable Manager → Simulation<br>        ↑              ↓                 ↓<br>   commandes      valeurs globales   alarmes/journal</code></pre><h4>Validation</h4><p>Tests API des messages, scénarios marche/arrêt et manuel/automatique, contrôle des valeurs simulées et essai de lecture OPC UA sur serveur de simulation.</p></div></details><p class="privacy">Projet industriel — démonstration et architecture présentées sans publier le code confidentiel.</p></div>
+      <div class="section-title project-heading"><div><p>Réalisations</p><h2>Des idées. Des systèmes.<br>Des projets concrets.</h2></div><p class="section-intro">Supervision, automatisme, instrumentation et vision : explorez mes réalisations par domaine.</p></div><div class="project-filters" role="group" aria-label="Filtrer les projets par domaine" hidden><button type="button" data-filter="all" aria-pressed="true">Tous les projets <span>5</span></button><button type="button" data-filter="supervision" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M6 12l3-3 3 3 5-5"/></svg>Supervision</button><button type="button" data-filter="automation" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16v12H4zM8 4v4m8-4v4M8 12h2m4 0h2M8 16h8"/></svg>Automatisme</button><button type="button" data-filter="instrumentation" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.8V5a3 3 0 0 0-6 0v9.8a5 5 0 1 0 6 0Z"/><path d="M11 7v11m6-10h4m-4 4h3"/></svg>Instrumentation</button><button type="button" data-filter="vision" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>Vision & robotique</button></div><p class="filter-status sr-only" role="status" aria-live="polite"></p>
+      <article class="project featured" data-category="supervision">
+        
+        <div class="project-image"><video controls preload="metadata" poster="supervision.jpg" playsinline aria-label="Démonstration de la supervision d'une centrale biochar sous LabVIEW"><source src="Supervision_Biochar_LinkedIn_FINAL.mp4" type="video/mp4">Votre navigateur ne permet pas de lire cette vidéo.</video></div>
+        <div class="project-copy"><div class="project-domain"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M6 12l3-3 3 3 5-5"/></svg></span><span>01 / Supervision industrielle</span></div><span class="tag">Projet de fin d’études · 2026</span><h3>Supervision modulaire d’une centrale biochar</h3><p>Conception d’une application LabVIEW fondée sur DQMH : lancement ordonné, navigation par subpanels, échanges par requêtes et broadcasts, centralisation des variables, simulation cyclique, alarmes et journal.</p><ul><li>23 modules suivis</li><li>Environ 71 sorties simulées</li><li>25 alarmes configurées</li><li>Lecture OPC UA validée</li></ul><details><summary>Voir la fiche technique</summary><div class="detail-content"><h4>Ma contribution</h4><p>Conception manuelle des contrôles industriels, création des modules DQMH, des requêtes et broadcasts, intégration dans les subpanels et développement du Variable Manager, de la simulation et des alarmes.</p><h4>Chaîne fonctionnelle</h4><pre><code>Modules procédé → Variable Manager → Simulation<br>        ↑              ↓                 ↓<br>   commandes      valeurs globales   alarmes/journal</code></pre><h4>Validation</h4><p>Tests API des messages, scénarios marche/arrêt et manuel/automatique, contrôle des valeurs simulées et essai de lecture OPC UA sur serveur de simulation.</p></div></details><a class="primary project-link" href="projet-biochar.html">Découvrir l'étude de cas complète</a><p class="privacy">Projet industriel — démonstration et architecture présentées sans publier le code confidentiel.</p></div>
       </article>
 
       <div class="project-grid">
-        <article class="card">
+        <article class="card" data-category="automation"><div class="project-domain"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16v12H4zM8 4v4m8-4v4M8 12h2m4 0h2M8 16h8"/></svg></span><span>02 / Automatisme</span></div>
   <div class="card-img">
     <a href="projet-station-dosage.html">
       <img
@@ -63,15 +63,15 @@
 
   <a class="primary project-link"
      href="projet-station-dosage.html"
-     style="padding:12px 16px;border-radius:8px;text-decoration:none">
-    Voir le projet, les captures et les vidéos
+     >
+    Explorer le projet ↗
   </a>
 
   <small>Projet personnel · 2026</small>
 </article>
-        <article class="card"><div class="card-img"><img src="outil-coupe-acquisition.png" alt="Acquisition LabVIEW de la température et de la déformation de l’outil de coupe"></div><span class="tag">LabVIEW · myRIO · MATLAB</span><h3>Outil de coupe intelligent</h3><p>Instrumentation d’un outil de coupe pour mesurer en temps réel la température et la déformation, puis recommander les paramètres d’usinage.</p><details><summary>Architecture et calcul</summary><div class="detail-content"><p><strong>Acquisition :</strong> thermocouple avec AD8495 et jauge de déformation avec INA125. La carte myRIO centralise les signaux analogiques avant leur traitement sous LabVIEW.</p><p><strong>Traitement :</strong> validation des mesures, modèle prédictif, correction PID dans les limites physiques et mémorisation de l’historique pour améliorer l’estimation.</p><pre><code>// Extrait de la logique du modèle de force<br>F_pred = β0 + β1·Vc + β2·f + β3·ap<br>       + β4·rayon + β5·deformation;<br>erreur = F_consigne - F_pred;<br>parametres = PID(erreur, limites_physiques);</code></pre><p><strong>Résultats affichés :</strong> température, effort résultant, force prédite, profondeur de passe, avance et vitesse de coupe recommandée.</p></div></details><small>Stage FabLab INSA Strasbourg · 2025</small></article>
-        <article class="card"><div class="card-img"><img src="vision.png" alt="Détection de visage par Viola-Jones"></div><span class="tag">MATLAB · Traitement du signal</span><h3>Détection et reconnaissance de visages</h3><p>Prétraitement d’images, corrélation, filtrage, détection de pics et comparaison de méthodes Viola–Jones et YOLOv3 Tiny.</p><details><summary>Méthode et extrait</summary><div class="detail-content"><p>Normalisation des images, extraction des zones utiles, comparaison par corrélation puis évaluation face aux détecteurs Viola–Jones et YOLOv3 Tiny.</p><pre><code>I = im2gray(I);<br>I = imresize(I, tailleReference);<br>score = max(normxcorr2(modele, I), [], "all");<br>reconnu = score &gt; seuil;</code></pre></div></details><small>Projet académique</small></article>
-        <article class="card agv"><div class="card-img"><img src="agv-cao-prototype.png" alt="CAO et prototype réel du robot AGV"></div><span class="tag">Raspberry Pi · Python · Vision embarquée</span><h3>AGV guidé par vision</h3><p>Détection d’une cible bleue en espace HSV, estimation de son angle et de sa distance, puis génération des commandes moteur. Intégration du pilotage par marqueur ArUco, de l’accès distant SSH et d’une carte électronique conçue et routée sous Proteus.</p><details><summary>Pilotage et extrait</summary><div class="detail-content"><p>La Pi Camera fournit l’image. Le traitement HSV localise la cible ; son décalage horizontal produit la consigne différentielle des moteurs.</p><pre><code>hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)<br>mask = cv2.inRange(hsv, bleu_min, bleu_max)<br>erreur = centre_cible - largeur / 2<br>moteur_g = vitesse - Kp * erreur<br>moteur_d = vitesse + Kp * erreur</code></pre></div></details><small>Projet de semestre S8 · contribution : vision et pilotage moteur</small></article>
+        <article class="card" data-category="instrumentation"><div class="project-domain"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.8V5a3 3 0 0 0-6 0v9.8a5 5 0 1 0 6 0Z"/><path d="M11 7v11m6-10h4m-4 4h3"/></svg></span><span>03 / Instrumentation</span></div><div class="card-img"><img loading="lazy" src="outil-coupe-acquisition.png" alt="Acquisition LabVIEW de la température et de la déformation de l’outil de coupe"></div><span class="tag">LabVIEW · myRIO · MATLAB</span><h3>Outil de coupe intelligent</h3><p>Instrumentation d’un outil de coupe pour mesurer en temps réel la température et la déformation, puis recommander les paramètres d’usinage.</p><details><summary>Architecture et calcul</summary><div class="detail-content"><p><strong>Acquisition :</strong> thermocouple avec AD8495 et jauge de déformation avec INA125. La carte myRIO centralise les signaux analogiques avant leur traitement sous LabVIEW.</p><p><strong>Traitement :</strong> validation des mesures, modèle prédictif, correction PID dans les limites physiques et mémorisation de l’historique pour améliorer l’estimation.</p><pre><code>// Extrait de la logique du modèle de force<br>F_pred = β0 + β1·Vc + β2·f + β3·ap<br>       + β4·rayon + β5·deformation;<br>erreur = F_consigne - F_pred;<br>parametres = PID(erreur, limites_physiques);</code></pre><p><strong>Résultats affichés :</strong> température, effort résultant, force prédite, profondeur de passe, avance et vitesse de coupe recommandée.</p></div></details><small>Stage FabLab INSA Strasbourg · 2025</small></article>
+        <article class="card" data-category="vision"><div class="project-domain"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span><span>04 / Vision par ordinateur</span></div><div class="card-img"><img loading="lazy" src="vision.png" alt="Détection de visage par Viola-Jones"></div><span class="tag">MATLAB · Traitement du signal</span><h3>Détection et reconnaissance de visages</h3><p>Prétraitement d’images, corrélation, filtrage, détection de pics et comparaison de méthodes Viola–Jones et YOLOv3 Tiny.</p><details><summary>Méthode et extrait</summary><div class="detail-content"><p>Normalisation des images, extraction des zones utiles, comparaison par corrélation puis évaluation face aux détecteurs Viola–Jones et YOLOv3 Tiny.</p><pre><code>I = im2gray(I);<br>I = imresize(I, tailleReference);<br>score = max(normxcorr2(modele, I), [], "all");<br>reconnu = score &gt; seuil;</code></pre></div></details><small>Projet académique</small></article>
+        <article class="card agv" data-category="vision"><div class="project-domain"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M2 11v4m20-4v4M8 22v-3m8 3v-3M9 15h6"/><circle cx="9" cy="11" r=".5"/><circle cx="15" cy="11" r=".5"/></svg></span><span>05 / Robotique embarquée</span></div><div class="card-img"><img loading="lazy" src="agv-cao-prototype.png" alt="CAO et prototype réel du robot AGV"></div><span class="tag">Raspberry Pi · Python · Vision embarquée</span><h3>AGV guidé par vision</h3><p>Détection d’une cible bleue en espace HSV, estimation de son angle et de sa distance, puis génération des commandes moteur. Intégration du pilotage par marqueur ArUco, de l’accès distant SSH et d’une carte électronique conçue et routée sous Proteus.</p><details><summary>Pilotage et extrait</summary><div class="detail-content"><p>La Pi Camera fournit l’image. Le traitement HSV localise la cible ; son décalage horizontal produit la consigne différentielle des moteurs.</p><pre><code>hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)<br>mask = cv2.inRange(hsv, bleu_min, bleu_max)<br>erreur = centre_cible - largeur / 2<br>moteur_g = vitesse - Kp * erreur<br>moteur_d = vitesse + Kp * erreur</code></pre></div></details><small>Projet de semestre S8 · contribution : vision et pilotage moteur</small></article>
       </div>
     </section>
 
@@ -93,10 +93,10 @@
     <section class="skills" id="competences">
       <div class="section-title"><p>Expertise</p><h2>De la mesure à l’interface opérateur</h2></div>
       <div class="skills-grid">
-        <div><span>01</span><h3>Supervision</h3><p>LabVIEW, DQMH, EHL/MHL, subpanels, alarmes, journalisation.</p></div>
-        <div><span>02</span><h3>Instrumentation</h3><p>Capteurs, acquisition, conditionnement, essais, myRIO, PID.</p></div>
-        <div><span>03</span><h3>Connectivité</h3><p>OPC UA, gestion centralisée de variables, interfaces entrées/sorties.</p></div>
-        <div><span>04</span><h3>Vision & calcul</h3><p>Python, OpenCV, MATLAB, traitement du signal et prototypage.</p></div>
+        <div><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M6 12l3-3 3 3 5-5"/></svg></span><h3>Supervision</h3><p>LabVIEW, DQMH, EHL/MHL, subpanels, alarmes, journalisation.</p></div>
+        <div><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.8V5a3 3 0 0 0-6 0v9.8a5 5 0 1 0 6 0Z"/><path d="M11 7v11m6-10h4m-4 4h3"/></svg></span><h3>Instrumentation</h3><p>Capteurs, acquisition, conditionnement, essais, myRIO, PID.</p></div>
+        <div><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16v12H4zM8 4v4m8-4v4M8 12h2m4 0h2M8 16h8"/></svg></span><h3>Connectivité</h3><p>OPC UA, gestion centralisée de variables, interfaces entrées/sorties.</p></div>
+        <div><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Vision & calcul</h3><p>Python, OpenCV, MATLAB, traitement du signal et prototypage.</p></div>
       </div>
     </section>
 
@@ -111,5 +111,24 @@
   </main>
 
   <footer><div><strong>Alassane Thiam</strong><p>Ingénieur mécatronique — disponible pour des opportunités en supervision, essais et automatisme.</p></div><a href="mailto:alassane.thiam@insa-strasbourg.fr">alassane.thiam@insa-strasbourg.fr</a></footer>
+<script>
+(() => {
+  const filters = document.querySelector('.project-filters');
+  const projects = [...document.querySelectorAll('[data-category]')];
+  const grid = document.querySelector('.project-grid');
+  const status = document.querySelector('.filter-status');
+  filters.hidden = false;
+  filters.addEventListener('click', event => {
+    const button = event.target.closest('button[data-filter]');
+    if (!button) return;
+    const filter = button.dataset.filter;
+    filters.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    projects.forEach(project => { project.hidden = filter !== 'all' && project.dataset.category !== filter; });
+    grid.hidden = ![...grid.children].some(project => !project.hidden);
+    const count = projects.filter(project => !project.hidden).length;
+    status.textContent = count + (count > 1 ? ' projets affichés' : ' projet affiché');
+  });
+})();
+</script>
 </body>
 </html>
